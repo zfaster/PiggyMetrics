@@ -10,6 +10,7 @@ spring:
 server:
   port: 8888
 
+#查看SecurityAutoConfiguration发下默认用户名为user #org.springframework.boot.autoconfigure.security.SecurityProperties.User.name
 security:
   user:
     password: ${CONFIG_SERVICE_PASSWORD}
