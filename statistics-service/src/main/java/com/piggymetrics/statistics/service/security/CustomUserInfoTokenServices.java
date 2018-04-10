@@ -2,6 +2,7 @@ package com.piggymetrics.statistics.service.security;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.oauth2.resource.AuthoritiesExtractor;
 import org.springframework.boot.autoconfigure.security.oauth2.resource.FixedAuthoritiesExtractor;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -37,6 +38,7 @@ public class CustomUserInfoTokenServices implements ResourceServerTokenServices 
 
 	private final String clientId;
 
+	@Autowired(required = false)//这里自动注入或者手动配置，使其可以负载均衡接入eureka
 	private OAuth2RestOperations restTemplate;
 
 	private String tokenType = DefaultOAuth2AccessToken.BEARER_TYPE;

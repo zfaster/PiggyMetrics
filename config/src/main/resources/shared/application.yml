@@ -16,12 +16,14 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://registry:8761/eureka/
-
+#ResourceServerProperties
 security:
   oauth2:
     resource:
-      user-info-uri: http://auth-service:5000/uaa/users/current
-
+      user-info-uri: http://auth-service/uaa/users/current
+      #user-info-uri: http://auth-service:5000/uaa/users/current
+      #改为通过eureka查找服务调用
+#security.oauth2.resource.loadBalanced
 spring:
   rabbitmq:
     host: rabbitmq
